@@ -1,1 +1,6 @@
 /bin/
+
+*~
+*.tmp
+*.jar
+*.class

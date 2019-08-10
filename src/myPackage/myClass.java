@@ -8,13 +8,15 @@ public class myClass {
 		// TODO Auto-generated method stub
 		String testStr = "";
 		
-		System.out.println("========Êı¶À========\nhuidexuan@foxmail.com");
+		System.out.println("========æ•°ç‹¬========");
+		System.out.println("Author's Email: wildsandalwood9@gmail.com");
 		do{
 			if(testStr==""){
-				System.out.println("ÇëÊäÈëÌâÄ¿£º");
-				System.out.println("ÀıÈç£º008507000000000010002000060005000008600010030000000000130000000000800000000400205");
+			    System.out.println("é¢˜ç›®è¾“å…¥ç¤ºä¾‹ï¼š008507000000000010002000060005000008600010030000000000130000000000800000000400205");
+			    System.out.print("è¯·è¾“å…¥é¢˜ç›®ï¼š");
+
 			}
-			else System.out.println("ÌâÄ¿ÊäÈë´íÎó£¬ÇëÖØĞÂÊäÈëÌâÄ¿£º");
+			else System.out.println("é¢˜ç›®è¾“å…¥é”™è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥é¢˜ç›®ï¼š");
 			@SuppressWarnings("resource")
 			Scanner scan = new Scanner(System.in);
 			testStr = scan.nextLine();

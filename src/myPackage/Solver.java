@@ -5,57 +5,57 @@ public class Solver {
 	int[][][] form = new int[10][10][10];
 	public Solver(int[][][] formIn){
 		new Copy1To2(formIn, form);
-		System.out.println("Ô­ÌâÄ¿£º£¨Ê£Óà"+new Sudoku(form).countBlank()+"¸ö¿Õ¸ñ£©");
+		System.out.println("åŸé¢˜ç›®ï¼šï¼ˆå‰©ä½™"+new Sudoku(form).countBlank()+"ä¸ªç©ºæ ¼ï¼‰");
 		new Sudoku(form).printInfo();
 		
 		
-		//ÏÈ¶ÔÔ­ÌâÄ¿½øĞĞÒ»´ÎÅÅ³ı
+		//å…ˆå¯¹åŸé¢˜ç›®è¿›è¡Œä¸€æ¬¡æ’é™¤
 		Sudoku mySD = new Sudoku(form);
 		if(mySD.check()==true){
 			new Copy1To2(mySD.getShuDu(),form);
-			//System.out.println("ÌâÄ¿Î´²é³ö´íÎó");
+			//System.out.println("é¢˜ç›®æœªæŸ¥å‡ºé”™è¯¯");
 		
-			// /****Çó½âÆ÷¹¤×÷Çø
+			// /****æ±‚è§£å™¨å·¥ä½œåŒº
 			long time = System.currentTimeMillis();
 			for(int i=0;i<99;i++){
-				//Ö´ĞĞÇó½âÆ÷1
+				//æ‰§è¡Œæ±‚è§£å™¨1
 				Algorithm_1 myAl_1 = new Algorithm_1(form);
 				Sudoku myAl_1SD = new Sudoku(myAl_1.getForm());
 				if(myAl_1SD.check()==true){
 					new Copy1To2(myAl_1SD.getShuDu(), form);
-					//System.out.println("Çó½âÆ÷1Õı³£");
+					//System.out.println("æ±‚è§£å™¨1æ­£å¸¸");
 				}
 				else{
-					System.out.println("Çó½âÆ÷1Òì³£±¨´í£¬ËÆºõÌâÄ¿ÎŞ½â");
+					System.out.println("æ±‚è§£å™¨1å¼‚å¸¸æŠ¥é”™ï¼Œä¼¼ä¹é¢˜ç›®æ— è§£");
 					System.exit(0);
 				}
-				//Ö´ĞĞÇó½âÆ÷2
+				//æ‰§è¡Œæ±‚è§£å™¨2
 				Algorithm_2 myAl_2 = new Algorithm_2(form);
 				Sudoku myAl_2SD = new Sudoku(myAl_2.getForm());
 				if(myAl_2SD.check()==true){
 					new Copy1To2(myAl_2SD.getShuDu(), form);
-					//System.out.println("Çó½âÆ÷2Õı³£");
+					//System.out.println("æ±‚è§£å™¨2æ­£å¸¸");
 				}
 				else{
-					System.out.println("Çó½âÆ÷2Òì³£±¨´í£¬ËÆºõÌâÄ¿ÎŞ½â");
+					System.out.println("æ±‚è§£å™¨2å¼‚å¸¸æŠ¥é”™ï¼Œä¼¼ä¹é¢˜ç›®æ— è§£");
 					System.exit(0);
 				}
 				new Copy1To2(new Algorithm_2(form).getForm(), form) ;
 			
 				if(new Sudoku(form).countBlank()==0){
-					//System.out.println("¹²Ö´ĞĞ"+ (i+1) +"¸öÑ­»·");
+					//System.out.println("å…±æ‰§è¡Œ"+ (i+1) +"ä¸ªå¾ªç¯");
 					break;
 				}
 			}
-			// ****/Çó½âÆ÷¹¤×÷Çø
+			// ****/æ±‚è§£å™¨å·¥ä½œåŒº
 		
-			System.out.println("\n[Êı¶ÀÇó½âÆ÷]µÄÔËËã½á¹û£ºÊ£Óà"+new Sudoku(form).countBlank()+"¸ö¿Õ¸ñ");
+			System.out.println("\n[æ•°ç‹¬æ±‚è§£å™¨]çš„è¿ç®—ç»“æœï¼šå‰©ä½™"+new Sudoku(form).countBlank()+"ä¸ªç©ºæ ¼");
 			new Sudoku(form).printInfo();
 			time = System.currentTimeMillis()-time;
-			System.out.println("ÓÃÊ±"+time+"ºÁÃë");
+			System.out.println("ç”¨æ—¶"+time+"æ¯«ç§’");
 		}
 		else{
-			System.out.println("ÌâÄ¿ÓĞÃ÷ÏÔµÄ´íÎó£¬Çë¼ì²é");
+			System.out.println("é¢˜ç›®æœ‰æ˜æ˜¾çš„é”™è¯¯ï¼Œè¯·æ£€æŸ¥");
 		}
 		
 	}

@@ -36,11 +36,11 @@ public class Sudoku {
 	
 	
 	private void checkA() {
-		// TODO Èô¿Õ¸ñ´¦²»¿ÉÄÜÊÇÈÎºÎÊý£¬ÅÐ¶¨ÌâÄ¿³ö´í
+		// TODO è‹¥ç©ºæ ¼å¤„ä¸å¯èƒ½æ˜¯ä»»ä½•æ•°ï¼Œåˆ¤å®šé¢˜ç›®å‡ºé”™
 		for(int i=1;i<10;i++){
 	        for(int j=1;j<10;j++){
 	            if(demo[i][j][0]==0){
-	                int temp=0;//ÀÛ¼Ó¼ÆÊýÆ÷
+	                int temp=0;//ç´¯åŠ è®¡æ•°å™¨
 	                for(int k=1;k<10;k++){
 	                    if(demo[i][j][k]!=0)temp++;
 	                }
@@ -50,8 +50,8 @@ public class Sudoku {
 	    }
 	}
 	private void checkB() {
-		//N²»ÔÚÕâÒ»ÐÐ/ÁÐ/¿é ÇÒ±¾ÐÐ/ÁÐ/¿éÆäËû´¦²»¿ÉÄÜÓÐN£¬ÅÐ¶¨ÌâÄ¿³ö´í
-	    //À©³äÁËelseÓï¾ä£¬ÅÐ¶¨Ä³ÐÐ/ÁÐ/¿éÊý×ÖnÖØ¸´³öÏÖ
+		//Nä¸åœ¨è¿™ä¸€è¡Œ/åˆ—/å— ä¸”æœ¬è¡Œ/åˆ—/å—å…¶ä»–å¤„ä¸å¯èƒ½æœ‰Nï¼Œåˆ¤å®šé¢˜ç›®å‡ºé”™
+	    //æ‰©å……äº†elseè¯­å¥ï¼Œåˆ¤å®šæŸè¡Œ/åˆ—/å—æ•°å­—né‡å¤å‡ºçŽ°
 		for(int n=1;n<10;n++){
 	        for(int i=1;i<10;i++){
 	            if(nIsInThisLine(n,i)==false){
@@ -120,18 +120,18 @@ public class Sudoku {
 	}
 
 	public void printInfo(){
-		System.out.println("©°©¤©¤©¤©¤©¤©¤©¤©Ð©¤©¤©¤©¤©¤©¤©¤©Ð©¤©¤©¤©¤©¤©¤©¤©´");
+		System.out.println("â”Œâ”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”");
 		for(int i=1;i<10;i++){
-			System.out.print("©¦ ");
+			System.out.print("â”‚ ");
 			for(int j=1;j<10;j++){
 				System.out.print(demo[i][j][0]+" ");;
-				if(j==3|j==6)System.out.print("©¦ ");
+				if(j==3|j==6)System.out.print("â”‚ ");
 			}
-			System.out.print("©¦");
+			System.out.print("â”‚");
 			System.out.print("\n");
-			if(i==3|i==6)System.out.println("©À©¤©¤©¤©¤©¤©¤©¤©à©¤©¤©¤©¤©¤©¤©¤©à©¤©¤©¤©¤©¤©¤©¤©È");
+			if(i==3|i==6)System.out.println("â”œâ”€â”€â”€â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”€â”€â”€â”¤");
 		}
-		System.out.println("©¸©¤©¤©¤©¤©¤©¤©¤©Ø©¤©¤©¤©¤©¤©¤©¤©Ø©¤©¤©¤©¤©¤©¤©¤©¼");
+		System.out.println("â””â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”˜");
 	}
 	
 	public int countBlank(){
@@ -181,8 +181,8 @@ public class Sudoku {
 	    return false;
 	}
 	
-	//ÏÂ±ßÕâ¸ö·½·¨±È½ÏÌØÊâ£¬ÒòÎªÓÐÊ±ºòÓÃÀ´ÇåÀíÍâ²¿Êý¶À¡£
-	public void excludePointNote(int line,int column,int[][][] formIn){//¶ÔÓÚÄ³¸öµã½øÐÐ¼ÆËãÅÅ³ýËùÔÚÐÐÁÐ¿éÆäËûÎ»ÖÃ³öÏÖ¸ÃÊý×ÖµÄ¿ÉÄÜÐÔ
+	//ä¸‹è¾¹è¿™ä¸ªæ–¹æ³•æ¯”è¾ƒç‰¹æ®Šï¼Œå› ä¸ºæœ‰æ—¶å€™ç”¨æ¥æ¸…ç†å¤–éƒ¨æ•°ç‹¬ã€‚
+	public void excludePointNote(int line,int column,int[][][] formIn){//å¯¹äºŽæŸä¸ªç‚¹è¿›è¡Œè®¡ç®—æŽ’é™¤æ‰€åœ¨è¡Œåˆ—å—å…¶ä»–ä½ç½®å‡ºçŽ°è¯¥æ•°å­—çš„å¯èƒ½æ€§
 		if(formIn[line][column][0]!=0){
 			int number = formIn[line][column][0];
 			for(int k=1;k<10;k++){

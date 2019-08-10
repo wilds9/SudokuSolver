@@ -8,13 +8,13 @@ public class Algorithm_1 {
 		ConfirmNewOne();
 	}
 	
-	//ɨ�����ͱʼǿ��Ƿ���д���µ����ֵ�
+	//扫描表格和笔记看是否能写入新的数字点
 	private void ConfirmNewOne(){
-	    //�������forѭ���Ǽ��ĳ������ıʼ�ֻʣn��һ����¼��
+	    //下面这个for循环是检查某个方块的笔记只剩n这一条记录。
 		for(int i=1;i<10;i++){
 	        for(int j=1;j<10;j++){
 	            if(demo[i][j][0]==0){
-	                int temp=0;//�ۼӼ�����
+	                int temp=0;//累加计数器
 	                for(int k=1;k<10;k++){
 	                    if(demo[i][j][k]!=0)temp++;
 	                }
@@ -32,7 +32,7 @@ public class Algorithm_1 {
 	            }
 	        }
 	    }
-	    //�����Ǽ��÷������� �� �� �� ������İ˸��ط���������д��n��
+	    //下面是检查该方块所在 行 列 块 的其余的八个地方都不可能写入n。
 	    
 	    for(int n=1;n<10;n++){
 	        for(int i=1;i<10;i++){
